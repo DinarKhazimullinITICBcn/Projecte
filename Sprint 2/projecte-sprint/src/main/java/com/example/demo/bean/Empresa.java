@@ -12,8 +12,6 @@ public class Empresa {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    
-    
 
     public Empresa() {
 		super();
