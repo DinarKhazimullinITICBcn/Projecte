@@ -15,13 +15,15 @@ public class Controlador {
 
     // Crear empresa
     @PostMapping("/empresa")
-    public Empresa createEmpresa(@RequestBody Empresa newEmpresa) {
-        return empresaRepository.save(newEmpresa);
+    public String submitForm(@RequestBody Empresa empresa) {
+        empresaRepository.save(empresa);
+        return "Correcte";  
     }
 
+    
     // Retorna empresas
     @GetMapping("/empresas")
-    public List<Empresa> getAllEmpresas() {
+    public Iterable<Empresa> getAllEmpresas() {
         return empresaRepository.findAll();
     }
     
